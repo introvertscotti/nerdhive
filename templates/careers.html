@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NerdHive&trade;</title>
+        <link rel="stylesheet" href="../static/css/main.css" />
+    </head>
+    <body>
+        {% include 'header.html' %}
+        <section class="jobs-list">
+            <h2>Job Openings</h2>
+            <ul class="openings">
+                {% if jobs %} {% for job in jobs %}
+                <li>
+                    <a href="/jobs/{{job['id']}}">
+                        <div>
+                            <h3>
+                                {{job['title']}} -
+                                <small>
+                                    {{job['company']}},
+                                    {{job['location']}}</small
+                                >
+                            </h3>
+                            {% if job['salary'] %}
+                            <p>
+                                <strong>Salary:</strong> {{job['currency']}}
+                                {{job['salary']}}
+                            </p>
+                            {% endif %}
+                            <p>
+                                <strong>Closing Date: </strong
+                                >{{job['open_until']}}
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %} {% else %}
+                <h4>
+                    We're sorry, there are no job openings available at the
+                    moment. <br />Come again later.
+                </h4>
+                {% endif %}
+            </ul>
+        </section>
+        <section class="quotes"></section>
+        {% include 'footer.html' %}
+    </body>
+</html>

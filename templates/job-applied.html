@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Job Successfully Applied</title>
+        <link rel="stylesheet" href="../static/css/main.css" />
+    </head>
+    <body>
+        <section class="success-msg">
+            <a href="/careers"><h1>NerdHive&trade;</h1></a>
+            <h3>Congratulations {{applicant}}!!</h3>
+            <br />
+            <small>
+                Your job application has been successfully submited for review. </small
+            ><br />
+            <p>
+                We will contact you once you have been shortlisted. <br />
+                Good luck!
+            </p>
+        </section>
+        {% include 'footer.html' %}
+    </body>
+</html>
