@@ -90,7 +90,3 @@ def load_job_page(job_id):
 
         application_details = (applied_job_id,fullname,email,linkedin_url,education_bg,work_exp,resume_url, f'{datetime.now()}'.split(' ')[0])
         return render_template(save_job_application(application_details), applicant=application_details[1])
-
-
-if __name__ == '__main__':
-    app.run(debug=True, port=4444)
